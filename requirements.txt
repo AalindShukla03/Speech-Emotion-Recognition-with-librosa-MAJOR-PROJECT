@@ -1,0 +1,19 @@
+# requirements.txt
+
+# Audio processing
+librosa
+
+# Data manipulation and analysis
+numpy
+pandas
+
+# Machine learning
+tensorflow
+keras
+
+# Web application
+Flask
+
+# Data visualization
+matplotlib
+seaborn

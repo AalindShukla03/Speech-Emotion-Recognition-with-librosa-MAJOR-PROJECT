@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Emotion Recognition with Librosa - Project Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Speech Emotion Recognition with Librosa - Project Documentation</h1>
+
+    <h2>Overview</h2>
+    <p>Welcome to the Speech Emotion Recognition project! This project is designed to recognize and classify human
+        emotions based on speech signals. The system takes audio input, processes the speech signals using the Librosa
+        library, and predicts the corresponding emotional state. Emotions include categories such as neutral, calm,
+        happy, sad, angry, fearful, disgusted, and surprised.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>Audio Data Collection:</strong> Utilizes a dataset containing audio recordings of human speech with
+            labeled emotional states.</li>
+        <li><strong>Feature Extraction:</strong> Extracts features from audio signals, including Mel Frequency Cepstral
+            Coefficients (MFCCs), chroma, mel, contrast, and tonnetz.</li>
+        <li><strong>Machine Learning Model:</strong> Implements a neural network model using Keras with a TensorFlow
+            backend for learning patterns from the extracted features and predicting emotions.</li>
+        <li><strong>Flask Web Application:</strong> Provides a user-friendly web interface for users to upload audio
+            files and receive predictions about the emotional content.</li>
+    </ul>
+
+    <h2>Project Structure</h2>
+    <ul>
+        <li><code>audio_data/</code>: Directory containing the audio dataset.</li>
+        <li><code>model/</code>: Directory for storing the trained machine learning model.</li>
+        <li><code>static/</code>: Static files for the Flask web application.</li>
+        <li><code>templates/</code>: HTML templates for the Flask web application.</li>
+        <li><code>utils.py</code>: Python script containing utility functions for feature extraction and prediction.</li>
+        <li><code>train_model.py</code>: Script for training the machine learning model.</li>
+        <li><code>app.py</code>: Main script for the Flask web application.</li>
+    </ul>
+
+    <h2>Getting Started</h2>
+    <ol>
+        
+        <li><strong>Install Dependencies:</strong></li>
+        <pre><code>pip install -r requirements.txt</code></pre>
+
+        <li><strong>Extract the features for Model (Optional):</strong></li>
+        <pre><code>python speech_extract.py</code></pre>
+    <ul>
+        <li>It will create/extract features=X.npy and Labels=y.npy for the model Of the dataset.</li>
+    </ul>
+
+        <li><strong>Train the Speech Model (Optional):</strong></li>
+        <pre><code>python Speech_train.py</code></pre>
+
+    <ul>
+ 
+        <li>It will create a model for the SER task which will be automatically uploaded in App.py</li>
+
+    </ul>
+        <li><strong>Run the Flask Web Application:</strong></li>
+        <pre><code>python app.py</code></pre>
+        <p>Visit <a href="http://127.0.0.1:5000/" target="_blank">http://127.0.0.1:5000/</a> in your web browser.</p>
+    </ol>
+
+    <h2>Dependencies</h2>
+    <ul>
+        <li>Python</li>
+        <li>Librosa</li>
+        <li>NumPy</li>
+        <li>TensorFlow</li>
+        <li>Keras</li>
+        <li>Flask</li>
+        <li>Matplotlib</li>
+        <li>Seaborn</li>
+    </ul>
+
+    <h2>Future Scope</h2>
+    <ul>
+        <li><strong>Real-Time Processing:</strong> Extend the system to process and classify emotions in real-time.</li>
+        <li><strong>Additional Features:</strong> Enhance the system with sentiment analysis or speaker identification
+            for a more comprehensive analysis.</li>
+        <li><strong>User Interface Enhancements:</strong> Improve the web application's user interface and add features
+            for a better user experience.</li>
+        <li><strong>Multi-modal Emotion Recognition:</strong> Expand the system to recognize emotions from multi-modal
+            data sources, such as combining speech and facial expressions.</li>
+    </ul>
+
+    <h2>Acknowledgments</h2>
+    <ul>
+        <li>The project uses the Librosa library for audio feature extraction.</li>
+        <li>Inspired by the work in speech emotion recognition and machine learning.</li>
+    </ul>
+
+    <h2>Author:</h2>
+    <ul>
+        <li>Created by Aalind Shukla under the guidance of mrs priyata mishra {SSIPMT,Raipur}.</li>
+    </ul>
+</body>
+
+</html>
