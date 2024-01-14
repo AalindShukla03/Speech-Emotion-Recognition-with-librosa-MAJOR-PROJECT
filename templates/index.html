@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/BACKGROUND.png') }}");
+            background-size: cover;
+            color: white;
+        }
+    </style>
+    <title>Speech Emotion Recognition</title>
+</head>
+<body>
+    <h1>Speech Emotion Recognition</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Choose a WAV file:</label>
+        <input type="file" name="file" accept=".wav" id="fileInput" required>
+        <br>
+        <audio controls id="audioPreview" style="display:none"></audio>
+        <br>
+        <input type="submit" value="Upload and Analyze">
+    </form>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const audioPreview = document.getElementById('audioPreview');
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                const objectURL = URL.createObjectURL(file);
+                audioPreview.src = objectURL;
+                audioPreview.style.display = 'block';
+            } else {
+                audioPreview.style.display = 'none';
+            }
+        });
+    </script>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
