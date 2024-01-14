@@ -50,7 +50,7 @@ This project focuses on developing a system for recognizing and classifying huma
 
 3. Extract the features for Model (Optional):
    ```bash
-   python speech_extract.py.
+   python speech_extract.py
    ```
 
    
